@@ -1,7 +1,3 @@
-# SPDX-License-Identifier: GPL-3.0-only
-#
-# Copyright (C) 2021 ImmortalWrt.org
-
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=uugamebooster
@@ -19,9 +15,6 @@ else ifeq ($(ARCH),mipsel)
 else ifeq ($(ARCH),x86_64)
   PKG_HASH:=9d8cea7b075555abfb9bc0eea109ff4e8975d6ba4e981e21c21ec22a1a7db22f
 endif
-
-PKG_LICENSE:=Proprietary
-PKG_MAINTAINER:=Tianling Shen <cnsztl@immortalwrt.org>
 
 include $(INCLUDE_DIR)/package.mk
 
