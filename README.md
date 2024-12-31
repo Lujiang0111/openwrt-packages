@@ -16,3 +16,4 @@ EOF
 | - | - | - |
 | luci-app-uugamebooster | uu game booster | uu主机加速器 |
 | luci-app-vlmcsd | LuCI support for KMS | KMS服务器 |
+| luci-app-vsftpd | LuCI support for VSFTPD | FTP服务器 |
