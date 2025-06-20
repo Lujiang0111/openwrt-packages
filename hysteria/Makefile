@@ -26,7 +26,7 @@ GO_PKG_LDFLAGS_X = \
 	$(GO_PKG)/app/v2/cmd.appArch=$(GO_ARCH)
 
 include $(INCLUDE_DIR)/package.mk
-include ../../lang/golang/golang-package.mk
+include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
 
 define Package/hysteria
   SECTION:=net
