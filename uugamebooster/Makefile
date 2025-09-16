@@ -6,15 +6,12 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(ARCH).tar.gz
 PKG_SOURCE_URL:=http://uurouter.gdl.netease.com/uuplugin/openwrt-$(ARCH)/v$(PKG_VERSION)/uu.tar.gz?
-ifeq ($(ARCH),aarch64)
-  PKG_HASH:=245ed83aa92704532fb937f018c1e8f38d71d90539daf206d4e76684368d643c
-else ifeq ($(ARCH),arm)
-  PKG_HASH:=761bbf09571ddd1c01939ca0be9f79e6b925b5d4162bb158c9e1b9c5cc5b2195
-else ifeq ($(ARCH),mipsel)
-  PKG_HASH:=79acff34be7c38cee6e42ba9fc47a84b423f26a9017a39161b264c273caebee9
-else ifeq ($(ARCH),x86_64)
-  PKG_HASH:=4a8420b6f916f923d68dcc2d3e95e5cbeefb8521c6d6bfd0911df66dd118127d
-endif
+
+HASH_aarch64:=245ed83aa92704532fb937f018c1e8f38d71d90539daf206d4e76684368d643c
+HASH_arm:=761bbf09571ddd1c01939ca0be9f79e6b925b5d4162bb158c9e1b9c5cc5b2195
+HASH_mipsel:=79acff34be7c38cee6e42ba9fc47a84b423f26a9017a39161b264c273caebee9
+HASH_x86_64:=4a8420b6f916f923d68dcc2d3e95e5cbeefb8521c6d6bfd0911df66dd118127d
+PKG_HASH:=$(HASH_$(ARCH))
 
 include $(INCLUDE_DIR)/package.mk
 
