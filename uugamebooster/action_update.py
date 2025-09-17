@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     latest_json = json.loads(latest_response.text)
     latest_download_url = latest_json["url"]
-    latest_download_url = re.sub(r"\?.*$", "", latest_download_url)
+    latest_download_url = re.sub(r"\?.*$", "?", latest_download_url)
     latest_version = re.search(r"\/v(\d+\.\d+\.\d+)\/", latest_download_url).group(1)
     with open("Makefile", "r", encoding="utf-8") as file:
         lines = file.readlines()
