@@ -5,7 +5,7 @@ PKG_VERSION:=10.9.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(ARCH).tar.gz
-PKG_SOURCE_URL:=http://uurouter.gdl.netease.com/uuplugin/openwrt-$(ARCH)/v$(PKG_VERSION)/uu.tar.gz
+PKG_SOURCE_URL:=http://uurouter.gdl.netease.com/uuplugin/openwrt-$(ARCH)/v$(PKG_VERSION)/uu.tar.gz?
 
 HASH_aarch64:=b4c4ad03acec5ed0870daf0731357ed34b5c8faaa970e908794a6e53463cea14
 HASH_arm:=fc56886e861d33ff233d294767c0dab8e94d3c0becf3e0d7c422d5e4e66183b3
