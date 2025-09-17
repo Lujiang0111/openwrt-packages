@@ -1,0 +1,42 @@
+name: Udate resources
+on:
+  schedule:
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+jobs:
+  update_list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Set up environment
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Update uugamebooster
+        run: |
+          cd uugamebooster
+          python action_update.py
+          cd -
+
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit to own repository
+        if: steps.verify_diff.outputs.changed == 'true'
+        run: |
+          git config --global user.name 'Lujiang'
+          git config --global user.email 'Lujiang0111@gmail.com'
+          git commit -am "Automated update list"
+          git push
