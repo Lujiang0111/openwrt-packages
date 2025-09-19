@@ -72,7 +72,10 @@ if __name__ == "__main__":
         if match:
             curr_version = match.group(1)
             if curr_version == latest_version:
+                print(f"Version={latest_version} not change, exit")
                 exit()
+
+            print(f"Current version={curr_version}, new version={latest_version}")
             lines[index] = f"PKG_VERSION:={latest_version}\n"
             continue
 
